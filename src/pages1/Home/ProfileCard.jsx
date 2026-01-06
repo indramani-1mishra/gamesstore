@@ -245,48 +245,74 @@ function ProfileCard() {
                 }
             `}</style>
             <div className='relative w-full h-full lg:h-full sm:h-full bg-[#212129] py-20'>
-                <div className='absolute z-10 top-2 md:-top-16 lg:-top-16 left-1/2 -translate-x-1/2 w-full px-4 '>
-                    <div className="flex items-center justify-center">
-                        <div className='flex items-center gap-5 flex-wrap'>
-                            <div className="card cursor-pointer bg-[#0a0a0a] w-full sm:w-[340px] rounded-[12px] h-[142px] flex items-center px-6 border border-gray-800 hover:border-yellow-500 transition-all duration-300">
-                                <div className='flex items-center gap-4'>
-                                    <div className=' p-3 rounded-lg'>
-                                        <img src="./assets\images\icon\counter-icon-1.png" alt="" />
-                                    </div>
-                                    <div>
-                                        <h2 className='text-white text-4xl font-SemiBold'>{formatNumber(profileCount)}</h2>
-                                        <p className='text-green-500 text-sm font-medium mt-1'>Profiles Created</p>
-                                    </div>
-                                </div>
-                            </div>
+               <div className="absolute z-20 left-1/2 -translate-x-1/2 -top-16 w-full px-4">
+  <div className="flex justify-center">
+    <div className="flex gap-6 flex-wrap justify-center">
 
-                            <div className="card cursor-pointer bg-[#0a0a0a] w-full sm:w-[340px] rounded-[12px] h-[142px] flex items-center px-6 border border-gray-800 hover:border-yellow-500 transition-all duration-300">
-                                <div className='flex items-center gap-4'>
-                                    <div className=' p-3 rounded-lg'>
-                                        <img src="./assets\images\icon\counter-icon-2.png" alt="" />
-                                    </div>
-                                    <div>
-                                        <h3 className='text-white text-4xl font-SemiBold'>{formatNumber(gameCount)}</h3>
-                                        <p className='text-green-500 text-sm font-medium mt-1'>Game Running</p>
-                                    </div>
-                                </div>
-                            </div>
+      {/* Card 1 */}
+      <div className="bg-[#0b0b0b] w-[340px] h-[140px] rounded-xl flex items-center px-6 
+                      border border-gray-800 hover:border-yellow-500 transition-all duration-300">
+        <div className="flex items-center gap-4">
+          <img
+            src="./assets/images/icon/counter-icon-1.png"
+            className="w-14 h-14"
+            alt=""
+          />
+          <div>
+            <h3 className="text-white text-4xl font-semibold">
+              {formatNumber(profileCount)}
+            </h3>
+            <p className="text-green-500 text-sm mt-1">
+              Profiles Created
+            </p>
+          </div>
+        </div>
+      </div>
 
-                            <div className="card cursor-pointer bg-[#0a0a0a] w-full sm:w-[340px] rounded-[12px] h-[142px] flex items-center px-6 border border-gray-800 hover:border-yellow-500 transition-all duration-300">
-                                <div className='flex items-center gap-4'>
-                                   <div className=' p-3 rounded-lg'>
-                                        <img src="./assets\images\icon\counter-icon-3.png" alt="" />
-                                    </div>
-                                    <div>
-                                        <h3 className='text-white text-4xl font-SemiBold'>{formatNumber(rewardCount)}</h3>
-                                        <p className='text-green-500 text-sm font-medium mt-1'>Total Rewards</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      {/* Card 2 */}
+      <div className="bg-[#0b0b0b] w-[340px] h-[140px] rounded-xl flex items-center px-6 
+                      border border-gray-800 hover:border-yellow-500 transition-all duration-300">
+        <div className="flex items-center gap-4">
+          <img
+            src="./assets/images/icon/counter-icon-2.png"
+            className="w-14 h-14"
+            alt=""
+          />
+          <div>
+            <h3 className="text-white text-4xl font-semibold">
+              {formatNumber(gameCount)}
+            </h3>
+            <p className="text-green-500 text-sm mt-1">
+              Game Running
+            </p>
+          </div>
+        </div>
+      </div>
 
-                </div>
+      {/* Card 3 */}
+      <div className="bg-[#0b0b0b] w-[340px] h-[140px] rounded-xl flex items-center px-6 
+                      border border-gray-800 hover:border-yellow-500 transition-all duration-300">
+        <div className="flex items-center gap-4">
+          <img
+            src="./assets/images/icon/counter-icon-3.png"
+            className="w-14 h-14"
+            alt=""
+          />
+          <div>
+            <h3 className="text-white text-4xl font-semibold">
+              {formatNumber(rewardCount)}
+            </h3>
+            <p className="text-green-500 text-sm mt-1">
+              Total Rewards
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 
                 <div className="first-games-slider mt-[350px] sm:mt-5 md:mt-5 xl:mt-5 lg:mt-5">

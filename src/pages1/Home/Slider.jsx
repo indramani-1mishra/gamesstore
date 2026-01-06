@@ -10,18 +10,15 @@ function Slider() {
   const navigate = useNavigate();
 
   return (
-    <div className="slider-container" >
+    <div className="slider-container">
       <Swiper
         className="mySwiper"
         modules={[Autoplay, Pagination, Navigation]}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        navigation
+        
         loop
-        speed={800}
+        speed={900}
         slidesPerView={1}
       >
         <SwiperSlide>
@@ -37,12 +34,16 @@ function Slider() {
         </SwiperSlide>
       </Swiper>
 
+      {/* Overlay */}
+      <div className="slider-overlay"></div>
+
+      {/* Caption */}
       <div className="slide-caption">
         <h1>Level Up Your Game</h1>
         <p>Play Without Limits</p>
         <button
-          onClick={() => navigate("/signin")}
           className="cta-button"
+          onClick={() => navigate("/signin")}
         >
           Let's Play
         </button>

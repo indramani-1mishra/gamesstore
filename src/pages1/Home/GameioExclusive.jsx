@@ -67,11 +67,11 @@ function GameioExclusive() {
     ];
 
     return (
-        <div className="px-4 py-10" style={{
+        <div className="px-4 py-10 " style={{
             background: 'linear-gradient(to bottom, #080618 0%, #181820 20%, #181820 50%, #181820 80%, #080618 100%)',
             paddingBottom: '100px'
         }}>
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-6xl mx-auto ">
                 <div className="flex justify-between items-center mb-6">
                     <h3 className="flex-1 text-center text-white font-[Open Sans] 
                text-[20px] md:text-3xl lg:text-3xl 
@@ -79,7 +79,7 @@ function GameioExclusive() {
                         <b>Gameio Exclusive Game</b>
                     </h3>
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 ">
                         <button ref={prevRef} className="bg-gray-700 hover:bg-[#2DCB2A] w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300">
                             <IoIosArrowBack size={20} color="#fff" />
                         </button>
@@ -121,7 +121,7 @@ function GameioExclusive() {
                     {exclusiveGames.map((game) => (
                         <SwiperSlide key={game.id}>
                             <div className="bg-[#1A1A22] rounded-xl overflow-hidden border border-gray-800 w-[94%] transition-all duration-300">
-                                <div className="relative h-51">
+                                <div className="relative h-31">
                                     <img
                                         src={game.image}
                                         alt={game.title}

@@ -57,8 +57,8 @@ function Header() {
   };
 
   return (
-    <header className="relative w-full z-[999] bg-gray-900 shadow-lg sticky top-0">
-      <nav className="container mx-auto px-10 py-5">
+    <header className="relative w-full z-[999] bg-black shadow-lg sticky top-0   flex justify-center items-center h-[100px]">
+      <nav className="container mx-auto px-1 py-5">
         <div className="flex items-center justify-between">
 
           {/* Logo */}

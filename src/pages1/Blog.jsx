@@ -21,7 +21,7 @@ function Blog() {
         console.log(`Playing trailer ${id}`);
     }
     return (
-        <div>
+        <div className="">
             <div
                 className="text-white max-h-[auto] min-h-[auto] sm:max-h-[420px] lg:max-h-[420px]  md:max-h-[420px] lg:min-h-[320px] p-8 bg-cover bg-center w-full mx-auto bg-no-repeat overflow-hidden flex items-center justify-start md:justify-center lg:justify-center"
                 style={{ backgroundImage: "url('/assets/banner-about-bg.webp')" }}
@@ -44,8 +44,7 @@ function Blog() {
                 </div>
             </div>
 
-
-            <div className="py-36 px-4 bg-[#181720]">
+ <div className="py-36 px-4 bg-[#181720]">
 
                 <div className="mb-12">
                     <h2 className="text-center text-3xl font-bold text-white">
@@ -99,6 +98,7 @@ function Blog() {
                     </div>
                 </div>
             </div>
+           
 
             <style jsx>{`
                 @media (max-width: 640px) {

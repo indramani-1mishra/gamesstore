@@ -1,24 +1,23 @@
 import { Play } from "lucide-react";
 
 function VideoPage() {
-
   const trailers = [
-    { id: 1, title: "Title", image: "/assets/video.webp" },
-    { id: 2, title: "Title", image: "/assets/video.webp" },
-    { id: 3, title: "Title", image: "/assets/video.webp" },
-    { id: 4, title: "Archery Master", image: "/assets/video.webp" },
-    { id: 5, title: "Archery Master", image: "/assets/video.webp" },
-    { id: 6, title: "Archery Master", image: "/assets/video.webp" },
-    { id: 7, title: "Archery Master", image: "/assets/video.webp" },
-    { id: 8, title: "Archery Master", image: "/assets/video.webp" },
-    { id: 9, title: "Archery Master", image: "/assets/video.webp" },
-    { id: 10, title: "Archery Master", image: "/assets/video.webp" },
-    { id: 11, title: "Archery Master", image: "/assets/video.webp" },
-    { id: 12, title: "Archery Master", image: "/assets/video.webp" },
+    { id: 1, title: "Title", image: "/video.webp" },
+    { id: 2, title: "Title", image: "/video.webp" },
+    { id: 3, title: "Title", image: "/video.webp" },
+    { id: 4, title: "Archery Master", image: "/video.webp" },
+    { id: 5, title: "Archery Master", image: "/video.webp" },
+    { id: 6, title: "Archery Master", image: "/video.webp" },
+    { id: 7, title: "Archery Master", image: "/video.webp" },
+    { id: 8, title: "Archery Master", image: "/video.webp" },
+    { id: 9, title: "Archery Master", image: "/video.webp" },
+    { id: 10, title: "Archery Master", image: "/video.webp" },
+    { id: 11, title: "Archery Master", image: "/video.webp" },
+    { id: 12, title: "Archery Master", image: "/video.webp" },
   ];
 
   const handlePlay = (id) => {
-    console.log(`Playing video ${id}`);
+    console.log("Playing video:", id);
   };
 
   return (
@@ -29,11 +28,9 @@ function VideoPage() {
         className="text-white min-h-[320px] max-h-[420px] p-8 bg-cover bg-center w-full flex items-center justify-center"
         style={{ backgroundImage: "url('/assets/banner-about-bg.webp')" }}
       >
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between w-[92%] max-w-[1400px] gap-8">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between w-[92%] max-w-[1400px]">
           <div className="flex flex-col gap-4 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Videos
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-bold">Videos</h1>
 
             <div className="flex items-center justify-center md:justify-start gap-2 text-sm text-gray-300">
               <span className="hover:text-orange-400 cursor-pointer">Home</span>
@@ -47,62 +44,42 @@ function VideoPage() {
       </div>
 
       {/* ================= VIDEO LIST ================= */}
-      {/* 👇 Footer se space ke liye pb-32 */}
-      <div className="pt-16 pb-32 px-4 bg-[#181720]">
+      <section className="bg-[#0f0f1a] py-9 px-4 ">
+      <h2 className="text-center text-white text-3xl font-bold mb-10">
+        video
+      </h2>
 
-        <div className="mb-12">
-          <h2 className="text-center text-3xl font-bold text-white">
-            Videos
-          </h2>
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        {trailers.map((item) => (
+          <div key={item.id} className="text-center">
+            {/* Thumbnail */}
+            <div className="relative rounded-xl overflow-hidden group cursor-pointer">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-[140px] object-cover"
+              />
 
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
-
-            {trailers.map((trailer) => (
-              <div
-                key={trailer.id}
-                className="flex flex-col items-center gap-4 group"
-              >
-                {/* VIDEO CARD */}
-                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden cursor-pointer">
-                  <img
-                    src={trailer.image}
-                    alt={trailer.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300"></div>
-
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div
-                      onClick={() => handlePlay(trailer.id)}
-                      className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border-2 border-white/50 transition-all duration-300 group-hover:scale-110 group-hover:bg-white/30"
-                    >
-                      <Play className="w-7 h-7 sm:w-8 sm:h-8 text-white fill-white ml-1" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* TITLE */}
-                <h3 className="text-white text-lg sm:text-xl font-semibold text-center mt-2">
-                  {trailer.title}
-                </h3>
-
-                {/* PLAY BUTTON */}
-                <button
-                  onClick={() => handlePlay(trailer.id)}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-8 rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
-                >
-                  Play
-                </button>
+              {/* Play icon overlay */}
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-100">
+                <span className="text-white text-4xl">▶</span>
               </div>
-            ))}
+            </div>
 
+            {/* Title */}
+            <h3 className="text-white text-lg font-semibold mt-3">
+              {item.title}
+            </h3>
+
+            {/* Play Button */}
+            <button className="mt-3 bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-7 py-2 rounded-full">
+              Play
+            </button>
           </div>
-        </div>
+        ))}
       </div>
-
+    </section>
+     
     </div>
   );
 }
