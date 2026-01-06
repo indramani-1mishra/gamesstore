@@ -8,11 +8,11 @@ function Footer() {
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
   return (
-    <footer className="bg-[#1a1d29] text-white pt-32 pb-8">
+    <footer className="bg-[#1a1d29] text-white pt-32 pb-8  ">
 
       {/* 🔥 SHOW ONLY WHEN USER IS NOT LOGGED IN */}
       {!isLoggedIn && (
-        <div className="w-full px-4 -mt-32 mb-0 relative">
+        <div className="">
           <div
             className="text-white relative bottom-[106px] rounded-2xl bg-cover bg-center w-full max-w-6xl mx-auto bg-no-repeat overflow-hidden shadow-2xl mt-5"
             style={{ backgroundImage: "url('./assets/home4.webp')" }}

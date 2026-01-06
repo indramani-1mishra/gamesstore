@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, } from "react";
 import {
   BrowserRouter,
   Routes,
@@ -54,6 +54,7 @@ import CreateExclusiveGame from "@/pages/form/CreateExclusiveGame";
 import CreateTrailer from "@/pages/form/CreateTrailer";
 import CreateVideo from "@/pages/form/CreateVideo";
 import MainLayout from "../layout1/Mainlayout";
+import ProtectedRoute from "../components/protectedroute/Protectedroute";
 
 /* ===================== SCROLL TO TOP ===================== */
 const ScrollToTop = ({ children }) => {
@@ -72,6 +73,8 @@ ScrollToTop.propTypes = {
 
 
 const Router = () => {
+ 
+
   return (
     <BrowserRouter>
       <ScrollToTop>
@@ -101,7 +104,8 @@ const Router = () => {
           
           <Route element={<ThemeProvider />}>
             <Route element={<Layout />}>
-              <Route path="/dashboard" element={<Homepage />} />
+              <Route element={<ProtectedRoute/>}>
+              <Route path="/admin"   element={<Homepage />} />
               <Route path="/sales" element={<Sales />} />
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/_blank" element={<Blank />} />
@@ -114,6 +118,7 @@ const Router = () => {
                 path="/billing-transactions"
                 element={<BillingTransactions />}
               />
+              </Route>
 
               
               <Route path="/create-tranding-game" element={<CreateTrandingGame />} />
